@@ -30,6 +30,7 @@
 	import VideoPlayer from "~/components/VideoPlayer.vue";
 	import LessonCompleteButton from "~/components/LessonCompleteButton.vue";
 	import {useLocalStorage} from "@vueuse/core";
+	import {useCourse} from "~/composables/useCourse.js";
 	
 	const course = useCourse();
 	const route = useRoute();
