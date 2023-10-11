@@ -5,7 +5,7 @@
 			<p>It looks like something broke.</p>
 			<p>Sorry about that.</p>
 			<p>
-				<strong>{{ error.message }}</strong>
+				<strong v-if="error">{{ error.message }}</strong>
 			</p>
 			<p>
 				Go to the <a class="hover:cursor-pointer" @click="handleError">first lesson</a>
