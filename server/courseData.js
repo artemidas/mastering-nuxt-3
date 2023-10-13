@@ -25,8 +25,7 @@ We also answer the question: “Are there any cases when you wouldn’t want to 
                     title: 'TypeScript in Vue Components',
                     slug: '2-typescript-in-vue-components',
                     number: 2,
-                    downloadUrl:
-                        'https://vueschool.io/lessons/typescript-in-vue-components',
+                    downloadUrl: 'https://vueschool.io/lessons/typescript-in-vue-components',
                     videoId: 684012498,
                     text: `In this lesson, we learn how to direct Vue Single File Components to work with typescript.`,
                 },

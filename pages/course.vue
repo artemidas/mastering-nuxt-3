@@ -2,7 +2,7 @@
 	<div>
 		<div class="mb-4 flex justify-between items-center w-full">
 			<h1>
-	             <span class="font-bold">{{ title }}</span>
+	             <span class="font-bold">{{ course.title }}</span>
 			</h1>
 			<UserCard />
 		</div>
@@ -10,7 +10,7 @@
 		<div class="flex flex-row justify-center flex-grow">
 			<div class="prose mr-4 p-8 bg-white rounded-md min-w-[20ch] max-w-[30ch] flex flex-col">
 				<h3>Chapters</h3>
-				<div v-for="chapter in chapters" class="space-y-1 mb-4 flex flex-col" :key="chapter.slug">
+				<div v-for="chapter in course.chapters" class="space-y-1 mb-4 flex flex-col" :key="chapter.slug">
 					<h4>{{ chapter.title }}</h4>
 					<NuxtLink
 						v-for="(lesson, index) in chapter.lessons"
@@ -42,10 +42,11 @@
 </template>
 
 <script setup lang="ts">
-	import UserCard from "~/components/UserCard.vue";
-	const { chapters, title } = useCourse();
-	
-	const resetError = (error) => {
+	const course = await useCourse();
+	const firstLesson = await useFirstLesson();
+
+	const resetError = async (error) => {
+		await navigateTo(firstLesson.path);
 		error.value = null;
 	}
 </script>
